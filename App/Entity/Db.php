@@ -1,5 +1,6 @@
 <?php
 namespace APP\Entity;
+use PDO;
 
 class Db {
 	private $db;
@@ -19,7 +20,7 @@ class Db {
 	public function escape($value) {
 		return $this->db->escape($value);
 	}
-
+ 
 	public function countAffected() {
 		return $this->db->countAffected();
 	}

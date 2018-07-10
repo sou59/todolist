@@ -24,7 +24,7 @@ class Todolist {
         return $this->title;
     }
 
-    public function settitle($title) {
+    public function setTitle($title) {
         $this->title = $title;
     }
     public function __construct ($data) {
@@ -41,9 +41,5 @@ class Todolist {
         }
     }
 
-    public static function prepare() {
-        // antislash ou ajouter en haut use PDO
-        self::$db;
-    }
 
 }

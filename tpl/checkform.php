@@ -1,11 +1,13 @@
 <?php
 require('../App/Entity/db.php');
+use App\Entity\Db;
 
-    $title = $_POST["title"];
+    if(!empty($_POST['title'])){
 
-	if(!empty($_POST['title'])){
-
-        $result = $db->execute('INSERT INTO list (title) VALUES ("$title")');
+        $title = $_POST["title"];
+        
+        $db = new Db("localhost", "root", "", "todolist");
+        $result = $db->execute('INSERT INTO list (title) VALUES ("'.$title.'")');
         
         if ($result) { // On s'assure que la requête s'est bien déroulée
 
@@ -13,6 +15,6 @@ require('../App/Entity/db.php');
         } 
         
     }
-    
+     
 
 ?>
